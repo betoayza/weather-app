@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import * as Components from "../index/indexComponents";
 
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -10,15 +11,7 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Components.Home />,
-      },
-      {
-        path: "login",
-        element: <Components.Login />,
-      },
-      {
-        path: "signup",
-        element: <Components.SignUp />,
-      },
+      },      
       {
         path: "about",
         element: <Components.About />,

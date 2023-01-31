@@ -1,14 +1,25 @@
 import React from "react";
-import { useSubmit, Form } from "react-router-dom";
+import { Form } from "react-router-dom";
 
-export const MainForm = () => {
-  let submit = useSubmit();
-
+export const MainForm = ({ handleSubmit }) => {
   return (
-    <div>
-      <Form onChange={(e) => submit(e.currentTarget)}>
-        <input type="text" role={"search"} placeholder={"Search..."} />
-        <button type="submit">Go</button>
+    <div className={"container"}>
+      <Form onSubmit={(e) => handleSubmit(e)}>
+        <input
+          className={"form-row form-control"}
+          type="text"
+          role={"search"}
+          placeholder={"Search..."}
+          style={{ color: "#6f00ff" }}
+          name={"city"}
+        />
+        <button
+          type="submit"
+          className={"btn btn-light m-2"}
+          style={{ fontWeight: "bold" }}
+        >
+          Go
+        </button>
       </Form>
     </div>
   );
