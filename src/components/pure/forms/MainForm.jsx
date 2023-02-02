@@ -9,16 +9,12 @@ export const MainForm = ({ handleSubmit }) => {
           className={"form-row form-control"}
           type="text"
           role={"search"}
-          placeholder={"Search..."}
-          style={{ color: "#6f00ff" }}
+          placeholder={"City..."}
+          style={{ color: "#6f00ff", fontWeight: "bold" }}
           name={"city"}
         />
-        <button
-          type="submit"
-          className={"btn btn-light m-2"}
-          style={{ fontWeight: "bold" }}
-        >
-          Go
+        <button type="submit" className={"btn btn-success m-2"}>
+          <i className="bi-search"></i>
         </button>
       </Form>
     </div>

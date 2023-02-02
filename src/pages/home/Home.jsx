@@ -12,7 +12,7 @@ export const Home = () => {
   const handleSubmit = (e) => {
     const form = e.target;
     const citySearch = form.elements.city.value;
-    console.log(citySearch);
+    // console.log(citySearch);
     setCity(citySearch);
   };
 
@@ -25,7 +25,7 @@ export const Home = () => {
     const getData = async () => {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${
         import.meta.env.VITE_API
-      }`;
+      }&units=metric`;
 
       const options = {
         timeout: 3000,
@@ -34,7 +34,7 @@ export const Home = () => {
       await axios
         .get(url, options)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           setWeather(res.data);
           setIsModalOpen(true);
         })
@@ -46,15 +46,11 @@ export const Home = () => {
 
   return isModalOpen && weather ? (
     <Modal>
-      <div
-        className={"container"}
-        style={{ display: "flex", flexDirection: "column" }}
-      >
-        <Weather data={weather} handleClose={handleClose} />
-      </div>
+      <Weather data={weather} handleClose={handleClose} />
     </Modal>
   ) : (
-    <div className={"text-center h-auto border"}>
+    <div className={"text-center h-auto"}>
+      <i style={{ fontSize: "30px", color: "#ffdb58" }} className="bi-brightness-high"></i>
       <h1>Wheater App</h1>
       <MainForm handleSubmit={handleSubmit} />
     </div>
